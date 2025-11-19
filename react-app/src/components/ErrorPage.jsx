@@ -6,11 +6,7 @@ const ErrorPage = ({ params = {} }) => {
 
     const errorCode = params.error_code || 500;
     const title = params.title || 'Internal server error';
-
-    // Get hostname and construct title with domain
-    const hostname = typeof window !== 'undefined' ? window.location.hostname : '';
-    const defaultTitle = hostname ? `${hostname} | ${errorCode}: ${title}` : `${errorCode}: ${title}`;
-    const htmlTitle = params.html_title || defaultTitle;
+    const htmlTitle = params.html_title || `${errorCode}: ${title}`;
 
     // Set document title
     React.useEffect(() => {
