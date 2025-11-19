@@ -36,9 +36,9 @@ That's it! Your custom error page is now live.
 
 ## ⚙️ Configuration (Zero Code)
 
-You can customize the text, error codes, and status indicators without modifying the code. Just use **Environment Variables** in Cloudflare Pages.
+You can customize the text, error codes, and status indicators without modifying the code. Just use **Variables and Secrets** in Cloudflare Pages.
 
-1.  Go to your Pages project **Settings** > **Environment variables**.
+1.  Go to your Pages project **Settings** > **Variables and Secrets**.
 2.  Add a new variable named `VITE_CONFIG_JSON`.
 3.  Set the value to a JSON string with your custom settings.
 
