@@ -115,16 +115,19 @@ function getParamsFromEnv() {
 
 function App() {
   const [params, setParams] = useState(getParamsFromEnv());
+  const isDevelopment = import.meta.env.DEV; // Vite 自動提供
 
   return (
     <div>
-      <div className="demo-controller-trigger"></div>
-      <div className="demo-controller">
-        <span>Select Scenario:</span>
-        <button onClick={() => setParams(defaultParams)}>Default (500)</button>
-        <button onClick={() => setParams(catastrophicParams)}>Catastrophic</button>
-        <button onClick={() => setParams(workingParams)}>Working (200)</button>
-      </div>
+      {isDevelopment && <div className="demo-controller-trigger"></div>}
+      {isDevelopment && (
+        <div className="demo-controller">
+          <span>Select Scenario:</span>
+          <button onClick={() => setParams(defaultParams)}>Default (500)</button>
+          <button onClick={() => setParams(catastrophicParams)}>Catastrophic</button>
+          <button onClick={() => setParams(workingParams)}>Working (200)</button>
+        </div>
+      )}
 
       <div>
         <ErrorPage params={params} />
