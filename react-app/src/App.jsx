@@ -34,7 +34,7 @@ const defaultParams = {
   },
   error_source: 'host',
 
-  what_happened: '<p>This domian is working fine but nothing in this place. Because author of this site is lazy.</p>',
+  what_happened: '<p>This domain is working fine but nothing in this place. Because author of this site is too lazy.</p>',
   what_can_i_do: '<p>Please try again in a few months.</p>',
 
   perf_sec_by: {
