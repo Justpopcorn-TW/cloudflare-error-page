@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import ErrorPage from './components/ErrorPage';
 
 const defaultParams = {
-  title: 'Internal server error',
-  error_code: 500,
+  title: 'It looks empty here...',
+  error_code: 200,
   domain: null, // Defaults to current hostname (window.location.hostname)
   time: null, // Defaults to current UTC time
   ray_id: null, // Defaults to random hex
@@ -22,9 +22,9 @@ const defaultParams = {
     name: 'Browser',
   },
   cloudflare_status: {
-    status: 'error',
-    status_text: 'Error',
-    location: 'London',
+    status: 'ok',
+    status_text: 'Working',
+    location: 'Somewhere in the Cloudflare Network',
     name: 'Cloudflare',
   },
   host_status: {
@@ -32,10 +32,10 @@ const defaultParams = {
     status_text: 'Working',
     name: 'Host',
   },
-  error_source: 'cloudflare',
+  error_source: 'host',
 
-  what_happened: '<p>There is an internal server error on Cloudflare\'s network.</p>',
-  what_can_i_do: '<p>Please try again in a few minutes.</p>',
+  what_happened: '<p>This domian is working fine but nothing in this place. Because author of this site is lazy</p>',
+  what_can_i_do: '<p>Please try again in a few months.</p>',
 
   perf_sec_by: {
     text: "Cloudflare",
