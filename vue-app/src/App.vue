@@ -1,5 +1,23 @@
-import React, { useState } from 'react';
-import ErrorPage from './components/ErrorPage';
+<template>
+  <div>
+    <div v-if="isDevelopment" class="demo-controller-trigger"></div>
+    <div v-if="isDevelopment" class="demo-controller">
+      <span>Select Scenario:</span>
+      <button @click="params = defaultParams">Default (500)</button>
+      <button @click="params = catastrophicParams">Catastrophic</button>
+      <button @click="params = workingParams">Working (200)</button>
+    </div>
+
+    <div>
+      <ErrorPage :params="params" />
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+import ErrorPage from './components/ErrorPage.vue';
+import './styles/demo.css';
 
 const defaultParams = {
   title: 'It looks empty here...',
@@ -74,8 +92,6 @@ const workingParams = {
   what_can_i_do: '<p>Visit the site before it crashes someday.</p>',
 };
 
-import './styles/demo.css';
-
 // Simple deep merge function
 function deepMerge(target, source) {
   const output = { ...target };
@@ -113,27 +129,6 @@ function getParamsFromEnv() {
   return defaultParams;
 }
 
-function App() {
-  const [params, setParams] = useState(getParamsFromEnv());
-  const isDevelopment = import.meta.env.DEV; // Vite 自動提供
-
-  return (
-    <div>
-      {isDevelopment && <div className="demo-controller-trigger"></div>}
-      {isDevelopment && (
-        <div className="demo-controller">
-          <span>Select Scenario:</span>
-          <button onClick={() => setParams(defaultParams)}>Default (500)</button>
-          <button onClick={() => setParams(catastrophicParams)}>Catastrophic</button>
-          <button onClick={() => setParams(workingParams)}>Working (200)</button>
-        </div>
-      )}
-
-      <div>
-        <ErrorPage params={params} />
-      </div>
-    </div>
-  );
-}
-
-export default App;
+const params = ref(getParamsFromEnv());
+const isDevelopment = import.meta.env.VITE_DEV === 'true';
+</script>

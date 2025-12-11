@@ -1,13 +1,50 @@
-# Cloudflare Error Page (React Version)
+# Cloudflare Error Page (Vue Version)
 
-A pixel-perfect, static React implementation of the classic Cloudflare error page.
+A pixel-perfect, static Vue implementation of the classic Cloudflare error page.
 
 With the help of **Gemini 3**, this fork adds a React application to the original project, making it incredibly easy to deploy directly to **Cloudflare Pages** 😈
 
 ---
+## 🖼️ Vue Version
 
+This repository includes a pixel-perfect static Vue implementation of the classic Cloudflare error page.
+
+### Local Development (Vue)
+
+To run the Vue version locally:
+
+```bash
+cd vue-app
+npm install
+npm run dev
+```
+
+### Deploy to Cloudflare Pages (Vue)
+
+You can deploy the Vue app to Cloudflare Pages:
+
+1. **Fork this repository** to your GitHub account.
+2. In the Cloudflare Dashboard, go to **Pages** and connect your forked repository.
+3. Configure the build settings:
+  * **Framework preset**: `Vue`
+  * **Build command**: `npm run build`
+  * **Build output directory**: `dist`
+  * **Root directory**: `vue-app`
+4. Click **Save and Deploy**.
+
+### Configuration (Vue)(# HAVE NOT TESTED!!!!)
+
+You can customize the error page by setting the `VITE_CONFIG_JSON` variable in Cloudflare Pages or a `.env` file in `vue-app`, using the same configuration format as the React version.
+
+Example `.env` for Vue:
+
+```env
+VITE_CONFIG_JSON={"title":"Vue Maintenance","error_code":503,"host_status":{"status":"error","status_text":"Maintenance"}}
+```
+
+The Vue app supports all configuration options described below for customizing text, error codes, and status indicators.
 ## 📸 Screenshots
-
+It looks the same as React version
 ### Desktop View
 ![Desktop View](./doc/desktop-preview.png)
 
@@ -15,25 +52,6 @@ With the help of **Gemini 3**, this fork adds a React application to the origina
 ![Mobile View](./doc/mobile-preview.png)
 
 ---
-
-## 🚀 Deploy to Cloudflare Pages
-
-You can deploy this project to Cloudflare Pages in just a few clicks.
-
-1.  **Fork this repository** to your GitHub account.
-2.  Log in to the [Cloudflare Dashboard](https://dash.cloudflare.com/) and go to **Compute (Workers & Pages)** > **Pages**.
-3.  Click **Connect to Git** and select your forked repository.
-4.  Configure the build settings:
-    *   **Framework preset**: `React(Vite)`
-    *   **Build command**: `npm run build`
-    *   **Build output directory**: `dist`
-    *   **Root directory**: `react-app` (Important!)
-5.  Click **Save and Deploy**.
-
-That's it! Your custom error page is now live.
-
----
-
 ## ⚙️ Configuration (Zero Code)
 
 You can customize the text, error codes, and status indicators without modifying the code. Just use **Variables and Secrets** in Cloudflare Pages.
@@ -176,7 +194,7 @@ The app performs a deep merge, so you only need to provide the fields you want t
 To run the project locally:
 
 ```bash
-cd react-app
+cd vue-app
 npm install
 npm run dev
 ```
@@ -189,7 +207,7 @@ To test your custom configuration in local development:
 
 1. **Create a `.env` file** in the `react-app` directory:
    ```bash
-   cd react-app
+   cd vue-app
    touch .env
    ```
 
@@ -226,7 +244,8 @@ VITE_CONFIG_JSON={"title":"All Systems Operational","error_code":200,"browser_st
 *   **Original Project**: Thanks to the original author [donlon](https://github.com/donlon/cloudflare-error-page) for the Python/Jinja2 implementation and assets.
 *   **Gemini 3**: For the intelligent coding assistance, React migration, and pixel-perfect UI refinements.
 *   **Cloudflare**: For providing the **robust** infrastructure and design inspiration.
+*   **Copilot and WARP**: For convert everything into Vue. 
 
 ---
 
-MIT License
+MIT License*

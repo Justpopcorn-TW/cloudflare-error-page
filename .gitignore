@@ -8,5 +8,5 @@ dist/
 .venv/
 venv/
 ttt/
-react-app/.env
+vue-app/.env
 WARP.md
