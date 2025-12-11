@@ -32,7 +32,7 @@ You can deploy the Vue app to Cloudflare Pages:
   * **Root directory**: `vue-app`
 4. Click **Save and Deploy**.
 
-### Configuration (Vue)(# HAVE NOT TESTED!!!!)
+### Configuration (Vue)
 
 You can customize the error page by setting the `VITE_CONFIG_JSON` variable in Cloudflare Pages or a `.env` file in `vue-app`, using the same configuration format as the React version.
 
@@ -205,7 +205,7 @@ The development server includes a **floating demo controller** (hover at the top
 
 To test your custom configuration in local development:
 
-1. **Create a `.env` file** in the `react-app` directory:
+1. **Create a `.env` file** in the `vue-app` directory:
    ```bash
    cd vue-app
    touch .env
