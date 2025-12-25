@@ -1,10 +1,4 @@
 <template>
-  <head>
-    <meta property="og:title" content= {{ htmlTitle }} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={{ customDomain }} />
-
-  </head>
   <div id="cf-wrapper">
     <div id="cf-error-details" class="p-0">
       <header class="mx-auto pt-10 lg:pt-6 lg:px-8 w-240 lg:w-full mb-8">

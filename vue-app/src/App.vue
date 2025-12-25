@@ -1,4 +1,9 @@
 <template>
+  <head>
+    <meta property="og:title" content={{ htmlTitle }} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={{ customDomain }} />
+  </head>
   <div>
     <div v-if="isDevelopment" class="demo-controller-trigger"></div>
     <div v-if="isDevelopment" class="demo-controller">
